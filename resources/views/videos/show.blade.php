@@ -4,11 +4,15 @@
         <tbody>
             <tr>
                 <td>Id</td>
-                <td>${{$video->id}}</td>
+                <td>{{$video->id}}</td>
             </tr>
             <tr>
                 <td>Title</td>
                 <td>{{$video->title}}</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td>{{$video->description}}</td>
             </tr>
             <tr>
                 <td>Duration</td>
@@ -24,5 +28,7 @@
             </tr>
         </tbody>
     </table>
+    <a href="{{route('videos.edit', ['video' => $video])}}" class="btn btn-warning">Edit</a>
+    <a href="{{route('videos.destroy', ['video' => $video])}}" class="btn btn-danger">Delete</a>
 @endsection
 
