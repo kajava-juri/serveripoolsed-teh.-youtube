@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Tag;
 use App\Models\Video;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
@@ -16,6 +17,7 @@ class PublicController extends Controller
     public function video(Video $video){
         return view('view', compact('video'));
     }
+    //routes, publiccontroller, tagcontroller, tagmodel, index
 
     public function page1(){
         return view('page1');
