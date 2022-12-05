@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\VideoController;
 use Illuminate\Support\Facades\Route;
@@ -29,7 +30,11 @@ Route::middleware('auth')->group(function(){
     Route::post('/videos/{video}', [VideoController::class, 'update'])->name('videos.update');
     Route::get('/videos/{video}/delete', [VideoController::class, 'destroy'])->name('videos.destroy');
 
+    Route::get('/videos/{video}/like', [LikeController::class, 'like'])->name('video.like');
+
     Route::post("/comments/{video}", [CommentController::class, 'store'])->name('comments.store');
+
+    
 });
 
 Route::get('/pages/page1', [PublicController::class, 'page1'])->name('public.page1');
