@@ -42,7 +42,7 @@ class CommentController extends Controller
         $comment->user()->associate(\Auth::user());
         $comment->video()->associate($video->id);
         $comment->save();
-        $request->session()->flash('status', 'Video added successfuly!');
+        $request->session()->flash('status', 'Comment added successfully!');
         return redirect()->route('public.video', ['video' => $video]);
     }
 
